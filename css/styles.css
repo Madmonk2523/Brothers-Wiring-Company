@@ -76,11 +76,12 @@ body {
 }
 
 .logo-img {
-    width: 48px;
-    height: 48px;
-    border-radius: 8px;
+    width: 70px;
+    height: 70px;
+    border-radius: 12px;
     object-fit: cover;
-    border: 2px solid var(--primary-blue);
+    border: 3px solid var(--primary-blue);
+    box-shadow: var(--shadow);
 }
 
 .logo-text {
@@ -89,14 +90,14 @@ body {
 }
 
 .company-name {
-    font-size: 1.125rem;
+    font-size: 1.375rem;
     font-weight: 700;
     color: var(--gray-900);
     line-height: 1.2;
 }
 
 .company-tagline {
-    font-size: 0.75rem;
+    font-size: 0.875rem;
     color: var(--primary-blue);
     font-weight: 500;
     line-height: 1;
@@ -440,6 +441,71 @@ body {
     font-weight: 500;
 }
 
+/* Work Gallery Section */
+.work-gallery {
+    padding: 5rem 0;
+    background: var(--light-bg);
+}
+
+.work-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.work-item {
+    position: relative;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    background: var(--white);
+}
+
+.work-item:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+}
+
+.work-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.work-item:hover .work-image {
+    transform: scale(1.05);
+}
+
+.work-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(15, 23, 42, 0.9));
+    padding: 3rem 1.5rem 1.5rem;
+    transform: translateY(100%);
+    transition: var(--transition);
+}
+
+.work-item:hover .work-overlay {
+    transform: translateY(0);
+}
+
+.work-content h4 {
+    color: var(--white);
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.work-content p {
+    color: var(--gray-300);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
 /* Contact Section */
 .contact {
     padding: 5rem 0;
@@ -529,10 +595,11 @@ body {
 }
 
 .footer-logo img {
-    width: 60px;
-    height: 60px;
-    border-radius: 8px;
+    width: 80px;
+    height: 80px;
+    border-radius: 12px;
     object-fit: cover;
+    border: 2px solid var(--accent-orange);
 }
 
 .footer-logo h3 {
@@ -688,6 +755,14 @@ body {
     
     .service-card {
         padding: 2rem 1.5rem;
+    }
+    
+    .work-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .work-image {
+        height: 250px;
     }
 }
 
